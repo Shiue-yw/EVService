@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外泌體(Extracellular vesicles)純化及粒徑分析服務申請單</title>
+<style>
+  :root{
+    --bg: #fbf9ef;
+    --line: #ddd6bd;
+    --highlight: #f5e6a3;
+    --required: #c0392b;
+    --link: #1a4fa0;
+    --text: #2b2b2b;
+    --btn: #4a4a4a;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, "PingFang TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+    line-height: 1.5;
+  }
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+  }
+  h1{
+    font-size: 1.5rem;
+    margin: 0 0 20px;
+  }
+  .notice{
+    font-size: 0.98rem;
+    margin: 0 0 8px;
+  }
+  .notice b { font-weight: bold; }
+  .notice a{ color: var(--link); font-weight: bold; text-decoration: underline; }
+  .announce-title{
+    text-align:center;
+    font-weight:bold;
+    background: #f4c9c9;
+    display:inline-block;
+    padding: 4px 18px;
+    border-radius: 4px;
+    margin: 14px auto 4px;
+  }
+  .announce-title-wrap{ text-align:center; }
+  .announce-body{
+    text-align:center;
+    font-weight:bold;
+    background: var(--highlight);
+    padding: 10px 14px;
+    margin: 4px 0 18px;
+  }
+  .pagemeta{
+    text-align:right;
+    font-size:0.85rem;
+    color:#555;
+    margin-bottom: 6px;
+  }
+  .section-title{
+    background: var(--highlight);
+    font-weight:bold;
+    padding: 10px 12px;
+    margin: 18px 0 0;
+  }
+  .field{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .field-label{
+    flex: 1 1 320px;
+    min-width: 220px;
+  }
+  .field-label .q{
+    font-weight: bold;
+    font-size: 1.05rem;
+  }
+  .field-label .hint{
+    color: #444;
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+  .required-mark{
+    color: var(--required);
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+  .field-input{
+    flex: 1 1 320px;
+    min-width: 260px;
+  }
+  input[type=text], input[type=email], input[type=tel], input[type=number], textarea{
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #999;
+    background: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    border-radius: 2px;
+  }
+  textarea{ min-height: 90px; resize: vertical; }
+  .checkbox-list{ display:flex; flex-direction: column; gap: 8px; }
+  .checkbox-btn{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    padding: 10px 14px;
+    background: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    user-select:none;
+  }
+  .checkbox-btn input{ width: 18px; height: 18px; accent-color: var(--btn); }
+  .checkbox-btn.checked{
+    background: #eef7ee;
+    border-color: #6a9c6a;
+  }
+  .rule-text{
+    font-size: 0.92rem;
+    margin-top: 10px;
+    line-height:1.5;
+  }
+  .submit-row{
+    margin-top: 30px;
+    text-align: center;
+  }
+  button.submit{
+    background: #3f7f3f;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    font-size: 1.05rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button.submit:hover{ background:#356b35; }
+  .attach{
+    font-size: 0.9rem;
+    background:#f2f2e6;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    display:inline-block;
+    margin-top: 6px;
+  }
+  .footer-note{
+    font-size: 0.85rem;
+    color:#666;
+    margin-top: 30px;
+    text-align:center;
+  }
+  .error{
+    border-color: var(--required) !important;
+  }
+  .error-msg{
+    color: var(--required);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    display:none;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>外泌體(Extracellular vesicles)純化及粒徑分析服務申請單</h1>
+
+  <p class="notice">1. 收費標準請參考臺大醫院醫學研究部研究人員網站公告</p>
+  <p class="notice">網址：<a href="https://www.ntuh.gov.tw" target="_blank" rel="noopener">核心官網</a></p>
+  <p class="notice">2. 如有相關技術問題可諮詢技術員。</p>
+  <p class="notice">技術員：薛茚文 23123456#263271 &nbsp; E-mail：<a href="mailto:yinwen@ntuh.gov.tw">yinwen@ntuh.gov.tw</a></p>
+
+  <div class="announce-title-wrap"><span class="announce-title">公告</span></div>
+  <div class="announce-body">即日起業界單位不收件，請另詢其他單位委託檢測。</div>
+
+  <div class="pagemeta">第 1 頁，共 1 頁</div>
+
+  <form id="evForm">
+
+    <div class="section-title">計畫主持人與服務申請人</div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">主持人_姓名</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <input type="text" id="pi_name" required>
+        <div class="error-msg">此欄位為必填</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">申請人_姓名</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <input type="text" id="app_name" required>
+        <div class="error-msg">此欄位為必填</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">申請人_機關與單位</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <input type="text" id="app_org" required>
+        <div class="error-msg">此欄位為必填</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">申請人_職稱</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <input type="text" id="app_title" required>
+        <div class="error-msg">此欄位為必填</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">申請人_E-mail</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <input type="email" id="app_email" required>
+        <div class="error-msg">請輸入正確的 E-mail</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">申請人_聯絡電話</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <input type="tel" id="app_phone" required>
+        <div class="error-msg">此欄位為必填</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">樣本數量</div>
+        <div class="hint">多少個樣本</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <input type="number" id="sample_qty" min="1" required>
+        <div class="error-msg">此欄位為必填</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">樣本種類 (Ex: serum, plasma, culture media....等)</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <textarea id="sample_type" required></textarea>
+        <div class="error-msg">此欄位為必填</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">需進行實驗(如兩個都需要請都打勾)</div>
+        <div class="required-mark">* 至少勾選一項</div>
+      </div>
+      <div class="field-input">
+        <div class="checkbox-list">
+          <label class="checkbox-btn" data-target="exp_nta">
+            <input type="checkbox" id="exp_nta">
+            NTA (NS300)粒徑分析
+          </label>
+          <label class="checkbox-btn" data-target="exp_iso">
+            <input type="checkbox" id="exp_iso">
+            Exosome Isolation
+          </label>
+        </div>
+        <div class="error-msg" id="exp_error">請至少勾選一項</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">詳閱規則說明請勾選：</div>
+        <div class="rule-text">本核心所發NTA分析報告只提供顆粒直徑大小與濃度給研究使用，無任何臨床與品質認證效益。</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <div class="checkbox-list">
+          <label class="checkbox-btn" data-target="agree_rule">
+            <input type="checkbox" id="agree_rule" required>
+            同意規則說明
+          </label>
+        </div>
+        <div class="error-msg" id="agree_error">請勾選同意規則說明</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">備註</div>
+        <div class="hint">若您有任何需註明事項，歡迎告知。</div>
+      </div>
+      <div class="field-input">
+        <textarea id="remarks"></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <div class="q">過去具"致謝共研服務"或"與共研人員共同作者"之論文</div>
+        <div class="hint">無 → 請填無　　有 → 請附上論文連結</div>
+        <div class="required-mark">* 必填</div>
+      </div>
+      <div class="field-input">
+        <textarea id="past_paper" required></textarea>
+        <div class="error-msg">此欄位為必填</div>
+      </div>
+    </div>
+
+    <p class="notice" style="margin-top:26px;">1. 問卷送出後技術員會通知安排送檢時間<br>
+      薛茚文　23123456 # 263271　E-mail：<a href="mailto:yinwen@ntuh.gov.tw">yinwen@ntuh.gov.tw</a></p>
+    <p class="notice">2. 請下載NTA檢體送件單(下方附件)，填寫列印紙本一份，主持人核章後送檢體時一併附上。</p>
+    <div class="attach">📎 Exosome純化檢體收件單_v115.docx (158.9 kB)</div>
+
+    <div class="submit-row">
+      <button type="submit" class="submit">送出</button>
+    </div>
+  </form>
+
+  <p class="footer-note">本頁面為表單樣式重製，僅供部門內部收件使用；送出後將開啟您的電子郵件軟體，寄送至技術員信箱。</p>
+</div>
+
+<script>
+document.querySelectorAll('.checkbox-btn').forEach(btn=>{
+  const cb = btn.querySelector('input[type=checkbox]');
+  const sync = ()=> btn.classList.toggle('checked', cb.checked);
+  cb.addEventListener('change', sync);
+  sync();
+});
+
+document.getElementById('evForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  let valid = true;
+
+  const textFields = ['pi_name','app_name','app_org','app_title','app_email','app_phone','sample_qty','sample_type','past_paper'];
+  textFields.forEach(id=>{
+    const el = document.getElementById(id);
+    const ok = el.value.trim() !== '';
+    el.classList.toggle('error', !ok);
+    const msg = el.parentElement.querySelector('.error-msg');
+    if(msg) msg.style.display = ok ? 'none' : 'block';
+    if(!ok) valid = false;
+  });
+
+  const expNta = document.getElementById('exp_nta').checked;
+  const expIso = document.getElementById('exp_iso').checked;
+  const expOk = expNta || expIso;
+  document.getElementById('exp_error').style.display = expOk ? 'none' : 'block';
+  if(!expOk) valid = false;
+
+  const agree = document.getElementById('agree_rule').checked;
+  document.getElementById('agree_error').style.display = agree ? 'none' : 'block';
+  if(!agree) valid = false;
+
+  if(!valid){
+    alert('請完成所有必填欄位後再送出。');
+    return;
+  }
+
+  const exps = [];
+  if(expNta) exps.push('NTA (NS300)粒徑分析');
+  if(expIso) exps.push('Exosome Isolation');
+
+  const body = [
+    '主持人_姓名：' + document.getElementById('pi_name').value,
+    '申請人_姓名：' + document.getElementById('app_name').value,
+    '申請人_機關與單位：' + document.getElementById('app_org').value,
+    '申請人_職稱：' + document.getElementById('app_title').value,
+    '申請人_E-mail：' + document.getElementById('app_email').value,
+    '申請人_聯絡電話：' + document.getElementById('app_phone').value,
+    '樣本數量：' + document.getElementById('sample_qty').value,
+    '樣本種類：' + document.getElementById('sample_type').value,
+    '需進行實驗：' + exps.join('、'),
+    '同意規則說明：是',
+    '備註：' + document.getElementById('remarks').value,
+    '過去具致謝共研服務或共同作者論文：' + document.getElementById('past_paper').value
+  ].join('\n');
+
+  const subject = encodeURIComponent('外泌體純化及粒徑分析服務申請 - ' + document.getElementById('app_name').value);
+  const mailto = 'mailto:yinwen@ntuh.gov.tw?subject=' + subject + '&body=' + encodeURIComponent(body);
+  window.location.href = mailto;
+});
+</script>
+</body>
+</html>
