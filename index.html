@@ -142,16 +142,18 @@
     max-width: 980px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 12px;
+    text-align: center;
   }
   .page-title-zh{
     color: var(--navy);
     font-size: 1.7rem;
     font-weight: 900;
     line-height: 1.3;
+    text-align: center;
   }
   .breadcrumb{
     color: var(--text-muted);
@@ -298,8 +300,22 @@
   }
   .sub-checkbox input{ margin-top: 3px; accent-color: #4caf5f; }
 
-  .rule-text{ font-size: 0.92rem; margin-top: 10px; line-height:1.5; color: var(--text-muted); }
+  .rule-text{ font-size: 0.92rem; line-height:1.5; color: var(--text-muted); }
   .agree-label-red{ color: #c0392b; }
+  .rule-agree-row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .rule-agree-row .rule-text{ flex: 1 1 auto; margin: 0; }
+  .checkbox-btn-sm{
+    flex: 0 0 auto;
+    padding: 9px 18px;
+    font-size: 0.98rem;
+    gap: 8px;
+  }
+  .checkbox-btn-sm input{ width: 18px; height: 18px; }
   .field-highlight{
     background: #fff6e8;
     border-radius: 6px;
@@ -497,14 +513,14 @@
 
     </div>
 
-    <div class="field field-highlight">
+    <div class="field field-highlight field-stack">
       <div class="field-label">
         <div class="q">詳閱規則說明請勾選：</div>
-        <div class="rule-text">本核心所發NTA分析報告只提供顆粒直徑大小與濃度給研究使用，無任何臨床與品質認證效益。</div>
       </div>
       <div class="field-input">
-        <div class="checkbox-list">
-          <label class="checkbox-btn" data-target="agree_rule">
+        <div class="rule-agree-row">
+          <div class="rule-text">本核心所發NTA分析報告只給研究使用，無任何臨床與品質認證效益。</div>
+          <label class="checkbox-btn checkbox-btn-sm" data-target="agree_rule">
             <input type="checkbox" id="agree_rule" required>
             <span class="agree-label-red">同意規則說明</span>
           </label>
