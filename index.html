@@ -242,6 +242,8 @@
   #sample_type{ min-height: 0; height: 40px; resize: vertical; }
 
   .checkbox-list{ display:flex; flex-direction: column; gap: 8px; }
+  .checkbox-row{ display:flex; flex-wrap: wrap; gap: 12px; }
+  .checkbox-row .checkbox-btn{ flex: 1 1 200px; }
   .checkbox-btn{
     display:flex;
     align-items:center;
@@ -457,14 +459,16 @@
       </div>
       <div class="field-input">
         <div class="checkbox-list">
-          <label class="checkbox-btn nta" data-target="exp_nta">
-            <input type="checkbox" id="exp_nta">
-            NTA (NS300)粒徑分析
-          </label>
-          <label class="checkbox-btn iso" data-target="exp_iso">
-            <input type="checkbox" id="exp_iso">
-            Exosome Isolation
-          </label>
+          <div class="checkbox-row">
+            <label class="checkbox-btn nta" data-target="exp_nta">
+              <input type="checkbox" id="exp_nta">
+              NTA (NS300)粒徑分析
+            </label>
+            <label class="checkbox-btn iso" data-target="exp_iso">
+              <input type="checkbox" id="exp_iso">
+              Exosome Isolation
+            </label>
+          </div>
           <div class="sub-options" id="iso_sub_options">
             <label class="sub-checkbox">
               <input type="checkbox" id="iso_ultracentrifugation">
