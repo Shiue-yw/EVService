@@ -217,6 +217,10 @@
   .field-label .hint{ color: var(--text-muted); font-size: 0.85rem; margin-top: 4px; }
   .required-mark{ color: var(--required); font-size: 0.82rem; margin-top: 6px; }
   .field-input{ flex: 1 1 320px; min-width: 260px; }
+  .field-stack{ flex-direction: column; }
+  .field-stack .field-label,
+  .field-stack .field-input{ flex: 1 1 100%; width: 100%; }
+  .field-stack .field-input{ margin-top: 10px; }
 
   .field-col{ flex: 1 1 220px; min-width: 200px; }
   .field-col .q{ font-weight: bold; font-size: 1.0rem; margin-bottom: 6px; color: var(--navy); }
@@ -453,7 +457,7 @@
       </div>
     </div>
 
-    <div class="field">
+    <div class="field field-stack">
       <div class="field-label">
         <div class="q">需進行實驗(如兩個都需要請都打勾)</div>
       </div>
