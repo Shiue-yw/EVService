@@ -121,13 +121,13 @@
     gap: 10px;
     border-radius: 999px;
     padding: 6px 18px;
-    background: #fff6e8;
-    border: 1px solid var(--gold);
+    background: #e0f6f4;
+    border: 1px solid #0abab5;
   }
   .announce-title-sm{
     font-weight: bold;
     color: #fff;
-    background: var(--navy);
+    background: #0abab5;
     padding: 2px 12px;
     border-radius: 999px;
     font-size: 0.75rem;
@@ -135,7 +135,7 @@
   }
   .announce-body-sm{
     font-weight: bold;
-    color: #8a6a1f;
+    color: #067872;
     font-size: 0.82rem;
   }
   .page-title-inner{
@@ -261,18 +261,18 @@
     border-color: var(--navy);
     box-shadow: 0 2px 8px rgba(28,74,130,0.2);
   }
-  .checkbox-btn.iso{ border-color: var(--gold); background: #fffaf0; color: #8a6a1f; }
+  .checkbox-btn.iso{ border-color: #6bbf7b; background: #f2faf3; color: #2e7d3e; }
   .checkbox-btn.iso.checked{
-    background: linear-gradient(135deg,#fbecc9,#f0dba0);
-    border-color: var(--gold);
-    box-shadow: 0 2px 8px rgba(201,167,105,0.3);
+    background: linear-gradient(135deg,#dcf5e0,#b9e8c2);
+    border-color: #4caf5f;
+    box-shadow: 0 2px 8px rgba(76,175,95,0.3);
   }
 
   .sub-options{
     margin-top: 10px;
     margin-left: 6px;
     padding-left: 16px;
-    border-left: 3px solid var(--gold-light);
+    border-left: 3px solid #b9e8c2;
     display: none;
     flex-direction: column;
     gap: 8px;
@@ -284,13 +284,13 @@
     gap: 8px;
     font-size: 0.92rem;
     font-weight: normal;
-    background: #fffaf0;
-    border: 1px solid var(--gold-light);
+    background: #f2faf3;
+    border: 1px solid #b9e8c2;
     border-radius: 6px;
     padding: 8px 12px;
     cursor: pointer;
   }
-  .sub-checkbox input{ margin-top: 3px; accent-color: var(--gold); }
+  .sub-checkbox input{ margin-top: 3px; accent-color: #4caf5f; }
 
   .rule-text{ font-size: 0.92rem; margin-top: 10px; line-height:1.5; color: var(--text-muted); }
   .field-highlight{
@@ -386,12 +386,15 @@
     <div class="section-title">計畫主持人與服務申請人</div>
     <div class="form-card">
 
-    <div class="field">
-      <div class="field-label">
+    <div class="field-row">
+      <div class="field-col">
         <div class="q">主持人_姓名</div>
-      </div>
-      <div class="field-input">
         <input type="text" id="pi_name" required>
+        <div class="error-msg">此欄位為必填</div>
+      </div>
+      <div class="field-col">
+        <div class="q">機關/單位名稱</div>
+        <input type="text" id="app_org" required>
         <div class="error-msg">此欄位為必填</div>
       </div>
     </div>
@@ -400,11 +403,6 @@
       <div class="field-col">
         <div class="q">申請人_姓名</div>
         <input type="text" id="app_name" required>
-        <div class="error-msg">此欄位為必填</div>
-      </div>
-      <div class="field-col">
-        <div class="q">申請人_機關與單位</div>
-        <input type="text" id="app_org" required>
         <div class="error-msg">此欄位為必填</div>
       </div>
       <div class="field-col">
@@ -427,6 +425,11 @@
       </div>
     </div>
 
+    </div>
+
+    <div class="section-title">委託項目與樣本資訊</div>
+    <div class="form-card">
+
     <div class="field-row">
       <div class="field-col">
         <div class="q">樣本數量</div>
@@ -443,7 +446,6 @@
     <div class="field">
       <div class="field-label">
         <div class="q">需進行實驗(如兩個都需要請都打勾)</div>
-        <div class="required-mark">* 至少勾選一項</div>
       </div>
       <div class="field-input">
         <div class="checkbox-list">
@@ -476,6 +478,8 @@
         </div>
         <div class="error-msg" id="exp_error">請至少勾選一項</div>
       </div>
+    </div>
+
     </div>
 
     <div class="field field-highlight">
@@ -513,8 +517,6 @@
         <textarea id="past_paper" required></textarea>
         <div class="error-msg">此欄位為必填</div>
       </div>
-    </div>
-
     </div>
 
     <div class="notice-card" style="margin-top:24px;">
@@ -595,7 +597,7 @@ document.getElementById('evForm').addEventListener('submit', function(e){
   const body = [
     '主持人_姓名：' + document.getElementById('pi_name').value,
     '申請人_姓名：' + document.getElementById('app_name').value,
-    '申請人_機關與單位：' + document.getElementById('app_org').value,
+    '機關/單位名稱：' + document.getElementById('app_org').value,
     '申請人_職稱：' + document.getElementById('app_title').value,
     '申請人_E-mail：' + document.getElementById('app_email').value,
     '申請人_聯絡電話：' + document.getElementById('app_phone').value,
