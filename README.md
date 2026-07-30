@@ -7,6 +7,8 @@
 1. 到 GitHub 建立一個新的 repository（例如：`ev-service-form`），設為 Public。
 2. 把這個資料夾裡的 `index.html` 上傳到該 repository 的根目錄
    （網頁介面：Add file → Upload files，把 `index.html` 拖進去 → Commit）。
+   LOGO 圖片已經直接內嵌在 `index.html` 裡面（Base64 編碼），**只需要這一個檔案**即可，
+   不用再另外上傳 `ntuh-logo.jpg`。
 3. 進入 repository 的 **Settings → Pages**。
 4. 在 "Build and deployment" 底下，Source 選擇 **Deploy from a branch**，
    Branch 選 `main`（或 `master`）、資料夾選 `/ (root)`，按 Save。
