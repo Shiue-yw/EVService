@@ -845,25 +845,51 @@ document.getElementById('evForm').addEventListener('submit', function(e){
   if(document.getElementById('iso_totalexosome').checked) isoMethods.push('Total Exosome kit - Invitrogen');
   if(document.getElementById('iso_sec').checked) isoMethods.push('Size Exclusion Chromatography(SEC) - qEV column');
 
-  const body = [
-    '主持人_姓名：' + document.getElementById('pi_name').value,
-    '申請人_姓名：' + document.getElementById('app_name').value,
-    '機關/單位名稱：' + document.getElementById('app_org').value,
-    '申請人_職稱：' + document.getElementById('app_title').value,
-    '申請人_E-mail：' + document.getElementById('app_email').value,
-    '申請人_聯絡電話：' + document.getElementById('app_phone').value,
-    '樣本數量：' + document.getElementById('sample_qty').value,
-    '樣本種類：' + document.getElementById('sample_type').value,
-    '需進行實驗：' + exps.join('、'),
-    'Exosome Isolation 方法：' + (isoMethods.length ? isoMethods.join('、') : '（未勾選）'),
-    '同意規則說明：是',
-    '備註：' + document.getElementById('remarks').value,
-    '過去具致謝共研服務或共同作者論文：' + document.getElementById('past_paper').value
-  ].join('\n');
+  const payload = {
+    pi_name: document.getElementById('pi_name').value,
+    app_name: document.getElementById('app_name').value,
+    app_org: document.getElementById('app_org').value,
+    app_title: document.getElementById('app_title').value,
+    app_email: document.getElementById('app_email').value,
+    app_phone: document.getElementById('app_phone').value,
+    sample_qty: document.getElementById('sample_qty').value,
+    sample_type: document.getElementById('sample_type').value,
+    exp_nta: expNta,
+    exp_iso: expIso,
+    iso_ultracentrifugation: document.getElementById('iso_ultracentrifugation').checked,
+    iso_exoquick: document.getElementById('iso_exoquick').checked,
+    iso_totalexosome: document.getElementById('iso_totalexosome').checked,
+    iso_sec: document.getElementById('iso_sec').checked,
+    agree_rule: agree,
+    remarks: document.getElementById('remarks').value,
+    past_paper: document.getElementById('past_paper').value
+  };
 
-  const subject = encodeURIComponent('外泌體純化及粒徑分析服務申請 - ' + document.getElementById('app_name').value);
-  const mailto = 'mailto:yinwen@ntuh.gov.tw?subject=' + subject + '&body=' + encodeURIComponent(body);
-  window.location.href = mailto;
+  const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxp5qXq49jNWCMGg2Vb2aTp79mrsX23kfkhL1tSBCeaQ7mu7JwWMN-8ZYQ_9sW0hOpv/exec';
+  const submitBtn = document.querySelector('#evForm button[type="submit"]');
+  const originalBtnText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = '送出中...';
+
+  fetch(GAS_WEB_APP_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  }).then(function(){
+    alert('申請單已送出！資料已存入紀錄表，技術員也會收到通知信。');
+    document.getElementById('evForm').reset();
+    document.querySelectorAll('.checkbox-btn').forEach(function(btn){
+      btn.classList.remove('checked');
+    });
+    document.getElementById('iso_sub_options').classList.remove('show');
+  }).catch(function(err){
+    console.error(err);
+    alert('送出時發生問題，請確認網路連線後再試一次，或直接聯絡技術員 yinwen@ntuh.gov.tw。');
+  }).finally(function(){
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalBtnText;
+  });
 });
 </script>
 
