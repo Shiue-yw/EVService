@@ -690,6 +690,15 @@
     </div>
   </form>
 
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-box" style="max-width:420px; text-align:center;">
+      <div style="width:56px; height:56px; border-radius:50%; background:#e0f6f4; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:1.8rem;">✅</div>
+      <div class="modal-title" style="text-align:center;">申請單已送出！</div>
+      <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.7; margin:0 0 22px;">技術員也會收到通知信並通知送檢體時間。</p>
+      <button type="button" id="closeSuccessBtn" style="background:var(--navy); color:#fff; border:none; padding:10px 32px; border-radius:999px; font-weight:bold; cursor:pointer; font-size:0.95rem;">確定</button>
+    </div>
+  </div>
+
   <div class="modal-overlay" id="instructionsModal">
     <div class="modal-box">
       <button type="button" class="modal-close" id="closeInstructionsBtn">&times;</button>
@@ -877,7 +886,7 @@ document.getElementById('evForm').addEventListener('submit', function(e){
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
     body: JSON.stringify(payload)
   }).then(function(){
-    alert('申請單已送出！資料已存入紀錄表，技術員也會收到通知信。');
+    document.getElementById('successModal').classList.add('show');
     document.getElementById('evForm').reset();
     document.querySelectorAll('.checkbox-btn').forEach(function(btn){
       btn.classList.remove('checked');
@@ -906,6 +915,13 @@ document.getElementById('closeInstructionsBtn').addEventListener('click', functi
   document.getElementById('instructionsModal').classList.remove('show');
 });
 document.getElementById('instructionsModal').addEventListener('click', function(e){
+  if(e.target === this){ this.classList.remove('show'); }
+});
+
+document.getElementById('closeSuccessBtn').addEventListener('click', function(){
+  document.getElementById('successModal').classList.remove('show');
+});
+document.getElementById('successModal').addEventListener('click', function(e){
   if(e.target === this){ this.classList.remove('show'); }
 });
 
